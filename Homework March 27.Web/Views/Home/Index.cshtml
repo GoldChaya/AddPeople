@@ -1,0 +1,28 @@
+﻿@using Homework_March_27.Data;
+
+
+@model PeopleViewModel
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a href="/home/add" class="btn btn-success">Add People</a>
+        <table class="table table-hover table-bordered">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+            </tr>
+            @foreach(Person p in Model.people)
+            {
+                <tr>
+                    <td>@p.FirstName</td>
+                    <td>@p.LastName</td>
+                    <td>@p.Age</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+
