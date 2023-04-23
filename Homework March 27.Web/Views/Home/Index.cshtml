@@ -5,6 +5,7 @@
 
 
 <div class="row">
+    <h1>@Model.Message</h1>
     <div class="col-md-12">
         <a href="/home/add" class="btn btn-success">Add People</a>
         <table class="table table-hover table-bordered">
@@ -13,7 +14,7 @@
                 <th>Last Name</th>
                 <th>Age</th>
             </tr>
-            @foreach(Person p in Model.people)
+            @foreach(Person p in Model.People)
             {
                 <tr>
                     <td>@p.FirstName</td>

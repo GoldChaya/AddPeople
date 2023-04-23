@@ -12,7 +12,11 @@ namespace Homework_March_27.Web.Controllers
         {
             Manager mgr = new(_connectionString);
             PeopleViewModel vm = new();
-            vm.people = mgr.GetAll();
+            vm.People = mgr.GetAll();
+            if (TempData["success-message"]!=null)
+            {
+                vm.Message = (string)TempData["success-message"];
+            }
 
             return View(vm);
         }
@@ -29,6 +33,7 @@ namespace Homework_March_27.Web.Controllers
                 }
             }
             mgr.AddPerson(peopleToAdd);
+            TempData["success-message"] = $"{peopleToAdd.Count} Added Successfully";
             return Redirect("/Home/Index");
         }
         public IActionResult Add()
